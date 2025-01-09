@@ -20,37 +20,37 @@ class AkunSeeder extends Seeder
             [
                 'username' => 'admin@email.com',
                 'password' => Hash::make('12345'), // password yang sudah di-hash
-                'id_role' => 1, // Asumsikan id_role 1 merujuk ke departemen 'Keuangan' atau lainnya
+                'id_role' => 1, // id_role 1 -- departemen pemasaran
                 'id_departemen' => 1,
             ],
             [
                 'username' => 'admin2@email.com',
                 'password' => Hash::make('12345'),
-                'id_role' => 2, // Asumsikan id_role 2 merujuk ke departemen 'Sumber Daya Manusia'
+                'id_role' => 2, // id_role 2 -- departemen 'niaga'
                 'id_departemen' => 2,
             ],
             [
                 'username' => 'admin3@email.com',
                 'password' => Hash::make('12345'),
-                'id_role' => 3, // Asumsikan id_role 3 merujuk ke departemen 'Pemasaran'
+                'id_role' => 3, // id_role 3 -- departemen 'konstruksi'
                 'id_departemen' => 3,
             ],
             [
                 'username' => 'admin4@email.com',
                 'password' => Hash::make('12345'),
-                'id_role' => 4, // Asumsikan id_role 4 merujuk ke departemen 'Teknologi Informasi'
+                'id_role' => 4, // id_role 4 -- departemen 'jairngan'
                 'id_departemen' => 4,
             ],
             [
                 'username' => 'admin5@email.com',
                 'password' => Hash::make('12345'),
-                'id_role' => 5, // Asumsikan id_role 4 merujuk ke departemen 'Teknologi Informasi'
+                'id_role' => 5, // id_role 5 -- departemen 'Te'
                 'id_departemen' => 5,
             ],
             [
-                'username' => 'feby@gmail.com',
+                'username' => 'vebiola@gmail.com',
                 'password' => Hash::make('12345'),
-                'id_role' => 6, // Asumsikan id_role 4 merujuk ke departemen 'Teknologi Informasi'
+                'id_role' => 6, // id_role 6 --pelanggan
                 'id_departemen' => NULL,
             ],
             // Tambahkan data lainnya sesuai kebutuhan
