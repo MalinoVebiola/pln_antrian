@@ -1,0 +1,42 @@
+:root {
+    --greenish: #20545c;
+    --greenishflat: #245c64;
+}
+
+.bg-greenish {
+    background-color: var(--greenish);
+}
+
+.text-greenish {
+    color: var(--greenish);
+}
+
+.top-line {
+    width: 100%;
+    height: 40px; /* Ketebalan garis */
+    background-color: var(--greenish);
+    position: fixed;
+    margin-bottom: 25px;
+    left: 0;
+    z-index: -1; /* Pastikan garis berada di atas elemen lainnya */
+}
+
+.bg-greenishflat {
+    background-color: var(--greenishflat);
+}
+
+.form-control::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.sidebar-active {
+    color: blue !important;
+}
+
+.page-title h3 {
+    font-size: 36px; /* Ganti ukuran sesuai keinginan */
+  }
+.header-row th {
+    text-align: center;
+}
