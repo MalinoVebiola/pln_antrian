@@ -26,16 +26,10 @@ class PenggunaController extends Controller
             $query->where('id_akun', $idAkun);
         })->where('is_hidden', false)
           ->get();
-
-        // Return ke view dengan data laporan
+        
         return view('antrian.laporan', compact('laporans'));
     }
 
-
-
-
-
-    // Simpan data ke database
     public function store(Request $request)
     {
         // Validasi data
@@ -51,7 +45,6 @@ class PenggunaController extends Controller
             'password' => 'required|min:6',
         ]);
 
-        // Buat akun terlebih dahulu
         $akun = Akun::create([
             'username' => $validated['email'],
             'password' => Hash::make($validated['password']),
