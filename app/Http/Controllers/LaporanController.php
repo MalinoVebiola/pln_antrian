@@ -47,10 +47,9 @@ class LaporanController extends Controller
             'layanan_via' => 'required|string|max:255',
             'bidang_keluhan' => 'required|string|max:255',
             'detail_keluhan' => 'required|string',
-            'surat' => 'nullable|file|mimes:pdf,doc,docx|max:2048', // Pastikan file sesuai aturan
+            'surat' => 'nullable|file|mimes:pdf,doc,docx|max:2048', 
         ]);
 
-        // Handle file upload jika ada
         if ($request->hasFile('surat')) {
             $validatedData['surat'] = $request->file('surat')->store('surat');
         }
@@ -65,7 +64,6 @@ if (!$pengguna) {
     return redirect()->back()->with('error', 'Nomor KTP tidak ditemukan di sistem!');
 }
 
-// Cari antrian yang sesuai dengan id_pelanggan pengguna
 $antrian = Antrian::where('id_pelanggan', $pengguna->id_pelanggan)->first();
 
 if ($antrian) {
@@ -75,16 +73,14 @@ if ($antrian) {
     return redirect()->back()->with('error', 'Pelanggan ini belum mengambil nomor antrian, ambil nomor antrian terlebih dahulu');
 }
 
-
-        // Simpan laporan ke database
         Laporan::create([
             'tanggal_laporan' => $validatedData['tanggal_laporan'],
             'layanan_via' => $validatedData['layanan_via'],
             'bidang_keluhan' => $validatedData['bidang_keluhan'],
             'detail_keluhan' => $validatedData['detail_keluhan'],
-            'surat' => $validatedData['surat'] ?? null, // Jika surat tidak ada, biarkan null
-            'id_antrian' => $validatedData['id_antrian'], // Menyimpan id_antrian yang diambil otomatis
-            'status' =>'Menunggu', // Menyimpan id_antrian yang diambil otomatis
+            'surat' => $validatedData['surat'] ?? null, 
+            'id_antrian' => $validatedData['id_antrian'], 
+            'status' =>'Menunggu',
         ]);
 
         return redirect()->back()->with('success', 'Laporan berhasil disimpan!');
