@@ -9,7 +9,7 @@ class Pengguna extends Model
 {
     use HasFactory;
 
-    protected $table = 'penggunas'; // Nama tabel
+    protected $table = 'penggunas'; 
     protected $primaryKey = 'id_pelanggan'; // Primary key
     public $timestamps = false; // Nonaktifkan timestamps
 
