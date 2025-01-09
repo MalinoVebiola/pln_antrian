@@ -22,15 +22,15 @@ class Admin2Controller extends Controller
     public function laporan(Request $request)
 {
     // Ambil role user yang sedang login
-    $role = auth()->user()->role->nama; // Pastikan relasi ke role sudah diatur di model User
-
+    $role = auth()->user()->role->nama; 
+    
     // Ambil laporan berdasarkan bidang_keluhan yang sesuai dengan role user login
     $laporans = Laporan::select('laporans.*')
-        ->join('antrians', 'laporans.id_antrian', '=', 'antrians.id_antrian')  // Join dengan antrians
-        ->join('penggunas', 'antrians.id_pelanggan', '=', 'penggunas.id_pelanggan')  // Join dengan pengguna
-        ->join('akuns', 'penggunas.id_akun', '=', 'akuns.id_akun')  // Join dengan akuns
-        ->join('roles', 'akuns.id_role', '=', 'roles.id_role')  // Join dengan roles
-        ->where('laporans.bidang_keluhan', $role)  // Cocokkan bidang_keluhan dengan nama role
+        ->join('antrians', 'laporans.id_antrian', '=', 'antrians.id_antrian')  
+        ->join('penggunas', 'antrians.id_pelanggan', '=', 'penggunas.id_pelanggan') 
+        ->join('akuns', 'penggunas.id_akun', '=', 'akuns.id_akun')  
+        ->join('roles', 'akuns.id_role', '=', 'roles.id_role')  
+        ->where('laporans.bidang_keluhan', $role)  
         ->get();
 
     // Kirim data laporan ke view
